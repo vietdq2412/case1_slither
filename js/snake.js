@@ -14,8 +14,15 @@ class Snake {
         this.listenMouseEvent();
     }
 
+    eat(){
+        this.tailpos.push({
+            x: this.posX - (this.tailpos.length * SNAKE_SPEED),
+            y: this.posY
+        })
+    }
+
     createTails() {
-        for (let i = 0; i < 150; i++) {
+        for (let i = 0; i < 30; i++) {
             this.tailpos.push({
                 x: this.posX - (i * SNAKE_SPEED),
                 y: this.posY
@@ -24,18 +31,14 @@ class Snake {
     }
 
     draw() {
-        // this.tailpos.forEach(pos => {
-        //     this.game.screen.drawCircle({ x: pos.x, y: pos.y}, 'snake');
-        // });
         for (let i = this.tailpos.length - 1; i > 1; i--) {
             if (i % 1 == 0) {
                 this.game.screen.drawCircle({ x: this.tailpos[i].x, y: this.tailpos[i].y }, 'shadow');
             }
-            if (i % 4 == 0) {
+            if (i % 3 == 0) {
                 this.game.screen.drawCircle({ x: this.tailpos[i].x, y: this.tailpos[i].y }, 'snake');
             }
         }
-
 
         ///draw head
         this.game.screen.drawCircle({
@@ -44,8 +47,6 @@ class Snake {
 
         //draw eye
         this.eye.draw()
-
-
     }
 
     update() {

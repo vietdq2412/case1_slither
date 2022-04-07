@@ -32,10 +32,11 @@ class Game {
         }
 
         if(this.food.checkEaten()){
+            this.snake.eat();
             this.point += 1;
             console.log("eat!");           
         }   
-        setTimeout(() => this.loop(), 1);
+        setTimeout(() => this.loop(), 20);
     }
 
     update() {

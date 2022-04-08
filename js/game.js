@@ -2,6 +2,8 @@ class Game {
     constructor() {
         this.canvas = document.createElement('canvas');
         this.canvas.style = 'margin: auto; position: negative;';
+        this.canvas.id = 'canvas';
+
         this.ctx = this.canvas.getContext('2d');
         this.canvas.width = SCREEN;
         this.canvas.height = SCREEN;
@@ -19,27 +21,39 @@ class Game {
     checkGameBoundary() {
         return Math.pow(this.snake.posX - GAME_WIDTH / 2, 2) + Math.pow(this.snake.posY - GAME_HEIGHT / 2, 2) - Math.pow(GAME_WIDTH / 2, 2) >= 0;
     }
+
     checkEaten() {
         return this.food.checkEaten();
     }
 
+    isOver(){
+        if(this.point < -10){
+            return true;
+        }
+    }
+
     loop() {
         let borderCondition = this.checkGameBoundary();
-        if (borderCondition) {
+        if (borderCondition || this.isOver()) {
             alert("game over!")
             return;
         }
         this.update();
         this.draw();
-        setTimeout(() => this.loop(), 0.5);
+        setTimeout(() => this.loop(), 20);
     }
 
     update() {
         document.getElementById('point').innerHTML = this.point;
-        if (this.food.checkEaten()) {
-            this.snake.eat();
+        let type = this.food.checkEaten();
+        if (type == 'yellow') {
+            this.snake.eat(true);
             this.point += 1;
-            console.log("eat!");
+            console.log("yumi!");
+        }else if(type == 'red'){
+            this.snake.eat(false);
+            this.point -= 5;
+            console.log("eww!");
         }
         this.screen.update();
         this.bg.update();

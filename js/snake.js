@@ -14,11 +14,18 @@ class Snake {
         this.listenMouseEvent();
     }
 
-    eat(){
-        this.tailpos.push({
+    eat(food){
+        if(food){
+            this.tailpos.push({
             x: this.posX - (this.tailpos.length * SNAKE_SPEED),
             y: this.posY
         })
+        }else{
+            for (let index = 0; index < 5; index++) {
+                this.tailpos.pop();
+            }   
+        }
+        
     }
 
     createTails() {

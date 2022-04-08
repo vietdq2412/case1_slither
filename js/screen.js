@@ -25,7 +25,7 @@ class Screen{
         styles['shadow'] = {
             color: 'rgba(0, 0, 0, 0.05)',
             boderColor: 'rgba(0, 0, 0, 0.07)',
-            width: 40
+            width: SNAKE_BORDER
         };
         styles['eye'] = {
             color: EYES_COLOR,
@@ -43,6 +43,11 @@ class Screen{
         ///food
         styles['food'] = {
             color: 'rgba(200, 155, 0, 1)',
+            boderColor: 'rgba(0, 80, 0, 0.1)',
+            width: FOOD_SIZE
+        };
+        styles['red_food'] = {
+            color: 'rgba(200, 20, 0, 1)',
             boderColor: 'rgba(0, 80, 0, 0.1)',
             width: FOOD_SIZE
         };

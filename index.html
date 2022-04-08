@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style>
+			#game {
+				width: 70%;
+				margin: auto;
+				padding: 100px;
+				background-color: rgb(133, 133, 222);
+				text-align: center;
+			}
+
+			#point {
+				text-align: center;
+				font-size: 100px;
+			}
+
+			button {
+				width: 10%;
+				height: 100px;
+			}
+
+			.bg {
+				background-color: blueviolet;
+
+				width: 80%;
+				height: auto;
+				margin: auto;
+			}
+		</style>
+	</head>
+	<body onload="run()">
+		<div class="bg">
+
+			<img src="meo.png" alt="" width="100" height="100">
+
+			<div style="text-align: center;">
+				<button onclick="run()">RUN</button>
+
+			</div>
+			<h1 id="point"></h1>
+
+			<div id="game"></div>
+		</div>
+
+	</body>
+	<script src="js/constant.js"></script>
+	<script src="js/snake.js"></script>
+	<script src="js/background.js"></script>
+
+	<script src="js/screen.js"></script>
+	<script src="js/food.js"></script>
+	<script src="js/eyes.js"></script>
+	<script src="js/game.js"></script>
+
+</html>

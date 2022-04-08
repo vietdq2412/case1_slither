@@ -12,6 +12,11 @@ class Food {
         for (let i = 0; i < 1000; i++) {
             let rx = Math.floor(Math.random() * GAME_WIDTH);
             let ry = Math.floor(Math.random() * GAME_HEIGHT);
+            let key = {
+                x: rx,
+                y: ry
+            }
+            // this.foods[key]
             this.foods.push({
                 x: rx,
                 y: ry

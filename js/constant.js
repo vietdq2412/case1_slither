@@ -1,7 +1,7 @@
 const GAME_WIDTH = 5000;
 const GAME_HEIGHT = 5000;
 
-const SCREEN = 1500
+const SCREEN = 800
 
 const SNAKE_SIZE = 35;
 const SNAKE_SPEED = 3;

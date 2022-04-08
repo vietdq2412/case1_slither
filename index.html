@@ -19,12 +19,12 @@
 				text-align: center;
 			}
 
-			.nav{
+			.nav {
 				background-color: beige;
 				text-align: center;
 			}
 
-			.table{
+			.table {
 				margin: auto;
 				width: 100%;
 				table-layout: fixed
@@ -37,23 +37,71 @@
 
 
 			button {
-				width: 70%;
-				height: 100px;
+				width: 50%;
+				height: 50px;
 			}
 
-			
 
-			#canvas{
+			#canvas {
 				border: solid red 2px;
+			}
+
+
+			.rule {
+				position: absolute;
+				background-color: #F4A460;
+				margin: 0 auto;
+
+				border-style: double;
+				top: 10%;
+				left: 0;
+				right: 0;
+				width: 40%;
+				height: 200px;
+			}
+
+			#button_ok {
+				position: absolute;
+				margin: 0 auto;
+
+				width: 30%;
+
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+
+			#hidden{
+				display: none;
+			}
+		 
+			#show{
+				display: block;
 			}
 		</style>
 	</head>
 	<body onload="run()">
+
+		<div class="rule" id='hidden'>
+			<ul>
+				<li>
+					Ăn màu vàng +1 điểm và dài hơn
+				</li>
+				<li>
+					Ăn màu đỏ -5 điểm và ngắn hơn
+				</li>
+				<li>
+					Dưới -10 điểm sẽ thua
+				</li>
+			</ul>
+
+			<button id="button_ok" onclick="hide_rule()">ok</button>
+		</div>
+
+
 		<div class="bg">
-
-
 			<div class="nav">
-				<table class="table" height= "150px;">
+				<table class="table" height="150px;">
 					<tr>
 						<td>
 							<img src="meo.png" alt="" width="70" height="70">
@@ -63,13 +111,12 @@
 						</td>
 						<td>
 							<button onclick="run()">RUN</button>
+							<button onclick="show_rule()">RULE</button>
 						</td>
 
 					</tr>
 				</table>
 			</div>
-
-
 			<div id="game"></div>
 		</div>
 

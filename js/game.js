@@ -82,3 +82,13 @@ function run() {
     }
     g = new Game();
 }
+
+function show_rule() {
+    let rule = document.getElementById('hidden');
+    rule.id = 'show';
+}
+
+function hide_rule(){
+    let rule = document.getElementById('show');
+    rule.id = 'hidden';
+}

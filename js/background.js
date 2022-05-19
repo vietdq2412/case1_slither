@@ -8,12 +8,6 @@ class BackGround {
 
     }
 
-    drawFood() {
-        let n = Math.floor(Math.random() * 200);
-        for (let i = 0; i < 200; i += 40) {
-            this.game.screen.drawCircle({ x: this.game.snake.posX + n, y: this.game.snake.posY + n }, 'food')
-        }
-    }
 
     drawLine(startPos, endPos) {
         this.game.ctx.strokeStyle = "#d9d9d9";

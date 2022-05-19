@@ -1,4 +1,4 @@
-class Snake {
+ class Snake {
     constructor(game) {
         this.game = game;
         this.posX = GAME_WIDTH / 2;
@@ -16,6 +16,7 @@ class Snake {
 
     eat(food){
         if(food){
+            SNAKE_SIZE *= 1.01;
             this.tailpos.push({
             x: this.posX - (this.tailpos.length * SNAKE_SPEED),
             y: this.posY

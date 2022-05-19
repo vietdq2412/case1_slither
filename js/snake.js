@@ -17,11 +17,14 @@
     eat(food){
         if(food){
             SNAKE_SIZE *= 1.01;
+            SNAKE_BORDER *= 1.01;
             this.tailpos.push({
             x: this.posX - (this.tailpos.length * SNAKE_SPEED),
             y: this.posY
         })
         }else{
+            SNAKE_SIZE -= SNAKE_SIZE * 0.05;
+            SNAKE_BORDER -= SNAKE_BORDER * 0.05;
             for (let index = 0; index < 5; index++) {
                 this.tailpos.pop();
             }   

@@ -9,7 +9,7 @@ const SNAKE_SPEED2 = 5;
 
 const FOOD_SIZE = 10;
 
-const SNAKE_BORDER = 23;
+let SNAKE_BORDER = 23;
 const SNAKE_CORLOR = 30;
 
 const GRID_SIZE = 100;
